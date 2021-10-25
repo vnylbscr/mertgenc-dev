@@ -46,7 +46,7 @@ const WORK_ITEMS: Array<WorksItemProps> = [
 
 const Works = (props: Props) => {
    return (
-      <PageLayout title='Mert Genç | Works'>
+      <PageLayout title='Works'>
          <Container>
             <Heading py={6} textAlign='center'>
                My Personal Works

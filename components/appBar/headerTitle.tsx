@@ -1,19 +1,10 @@
 import { Box, Avatar, Heading, Stack, Flex, useColorModeValue, Text } from '@chakra-ui/react';
-import { motion, Variant } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
-import { CodeIcon } from './icons';
-interface Props {}
+import { CodeIcon } from '../icons';
 
-const svgVariant = {
-   hidden: {
-      rotate: -180,
-   },
-   visible: {
-      rotate: 0,
-      transition: { duration: 1 },
-   },
-};
+interface Props {}
 
 const HeaderTitle = (props: Props) => {
    return (

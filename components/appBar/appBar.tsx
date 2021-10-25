@@ -2,24 +2,22 @@ import React, { useState } from 'react';
 import {
    Box,
    Stack,
-   Heading,
    Flex,
-   Text,
-   Button,
-   Spacer,
    useDisclosure,
-   useColorModeValue,
    MenuList,
    MenuItem,
    Menu,
    MenuButton as MenuButtonChakra,
+   Button,
+   useColorModeValue,
 } from '@chakra-ui/react';
 import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import HeaderTitle from './headerTitle';
-import { MenuButton } from './icons/menuButton';
+import { MenuButton } from '../icons/menuButton';
 import AnimatedNavText from './animatedNavText';
 import ChangeThemeButton from './changeThemeButton';
 import { useRouter } from 'next/dist/client/router';
+import { GithubIcon } from '../icons';
 
 const SELECT_ITEMS = [
    {
@@ -48,10 +46,9 @@ const AppBar = () => {
          position='fixed'
          width='100%'
          zIndex={100}
-         style={{ backdropFilter: 'blur(10px)' }}
+         style={{ backdropFilter: 'blur(10px)', WebkitBackfaceVisibility: 'hidden' }}
+         bg={{ base: useColorModeValue('#EDF2F7', '#1A202C'), md: 'none' }}
          padding={6}
-         // bg={useColorModeValue('#FEF9EF', '#222831')}
-         // bg={useColorModeValue('#ffffff40', '#20202380')}
       >
          <Flex mr={6}>
             <HeaderTitle />
@@ -68,6 +65,16 @@ const AppBar = () => {
             <AnimatedNavText href='/blog' title='Posts' />
          </Stack>
          <Box ml='auto' mr='24px'>
+            <Button
+               rightIcon={<GithubIcon />}
+               onClick={() => {
+                  window.open('https://github.com/vnylbscr/mertgenc-dev', '_blank');
+               }}
+               mr={4}
+               display={{ base: 'none', md: 'inline-flex' }}
+            >
+               source code
+            </Button>
             <ChangeThemeButton />
          </Box>
          <Box display={{ base: 'block', md: 'none' }}>
@@ -81,6 +88,14 @@ const AppBar = () => {
                         {item.title}
                      </MenuItem>
                   ))}
+                  <MenuItem
+                     rightIcon={<GithubIcon />}
+                     onClick={() => {
+                        window.open('https://github.com/vnylbscr/mertgenc-dev', '_blank');
+                     }}
+                  >
+                     source code
+                  </MenuItem>
                </MenuList>
             </Menu>
          </Box>

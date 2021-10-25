@@ -1,20 +1,26 @@
 import { Image } from '@chakra-ui/image';
 import { Box } from '@chakra-ui/layout';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { urlFor } from '../lib/sanity';
-import { twilight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-// serialize for code
 export const serializers = {
    types: {
       code: (props: any) => {
-         console.log('props', props);
-
+         const { language, code } = props?.node;
          return (
             <Box py={6}>
-               <pre>
-                  <code>{props?.node?.code}</code>
-               </pre>
+               <SyntaxHighlighter
+                  customStyle={{
+                     lineHeight: '1.75',
+                     fontSize: '0.9rem',
+                     fontStyle: 'inherit',
+                  }}
+                  style={nightOwl}
+                  language={language || ''}
+               >
+                  {code || ''}
+               </SyntaxHighlighter>
             </Box>
          );
       },

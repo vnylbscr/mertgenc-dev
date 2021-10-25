@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, Transition, SVGMotionProps } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useColorModeValue } from '@chakra-ui/color-mode';
 
 const MenuButton = ({

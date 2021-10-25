@@ -12,13 +12,16 @@ interface BlogPageProps {
    posts: any[];
 }
 
-const postQuery = groq`*[_type == "post"] | order(publishedAt desc){
+const postQuery = groq`*[_type == "post"] | order(_createdAt desc){
                 title,
                 "name":author->name,
                 "authorImage":author->image,
                 _createdAt,
                 publishedAt,
                 subtitle,
+                categories[] -> {
+                 title,
+                },
                 body,
                 slug,
                 mainImage{
@@ -30,12 +33,10 @@ const postQuery = groq`*[_type == "post"] | order(publishedAt desc){
             }`;
 
 const BlogPage = ({ posts }: BlogPageProps) => {
-   console.log(posts);
-
    const router = useRouter();
-
+   const tagColor = useColorModeValue('black', 'white');
    return (
-      <PageLayout title='Mert Genç | Blog Posts'>
+      <PageLayout title='Blog Posts'>
          <Container>
             <Heading py={6} textAlign='center'>
                My Blog Posts
@@ -50,9 +51,18 @@ const BlogPage = ({ posts }: BlogPageProps) => {
                   }}
                   onClick={() => router.push(`/blog/${item.slug.current}`)}
                   key={item.title}
-                  my={16}
+                  py={6}
                >
                   <Image src={urlFor(item.mainImage).url() || undefined} alt={item.name + item.title} />
+                  <Stack pt={4} align='center' gridRowGap={3} spacing={3} flexDir='row' direction='row' wrap='wrap'>
+                     {item?.categories?.map((tag: any, index: number) => (
+                        <Box key={tag + index} bgColor={'linkedin.400'} p={2} borderRadius='xl'>
+                           <Text isTruncated color={tagColor} fontWeight='bold'>
+                              #{tag?.title}
+                           </Text>
+                        </Box>
+                     ))}
+                  </Stack>
                   <Heading py={4}>
                      {item.title}
                      <ThemedText my={4} color='linkedin.400' fontSize='large'>

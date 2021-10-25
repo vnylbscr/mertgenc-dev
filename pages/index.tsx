@@ -53,7 +53,28 @@ const Home = () => {
                   </Button>
                </a>
             </Box>
+            <Box mt={4}>
+               <Heading
+                  borderBottomWidth='thin'
+                  borderBottom='4px'
+                  borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
+               >
+                  Bio
+               </Heading>
 
+               <Stack py={4} direction='row' align='center' spacing={2}>
+                  <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
+                     1997
+                  </Heading>
+                  <ThemedText>Born in Istanbul.</ThemedText>
+               </Stack>
+               <Stack py={4} direction='row' align='center' spacing={2}>
+                  <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
+                     2016 - 2021
+                  </Heading>
+                  <ThemedText>Student University Computer Science and Open source stuffs</ThemedText>
+               </Stack>
+            </Box>
             <Box mt={4}>
                <Heading
                   borderBottomWidth='thin'

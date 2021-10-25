@@ -2,7 +2,7 @@ import { Container } from '@chakra-ui/layout';
 import { useColorModeValue, Box } from '@chakra-ui/react';
 import React from 'react';
 import Head from 'next/head';
-import AppBar from '../appBar';
+import AppBar from '../appBar/appBar';
 import Footer from '../footer';
 
 const MainLayout: React.FC = (props) => {
@@ -26,9 +26,10 @@ const MainLayout: React.FC = (props) => {
             <meta name='github:creator' content='@vnylbscr' />
             <meta name='github:image' content='/card.png' />
             <meta property='og:site_name' content="Mert Genç's Homepage" />
+            <meta property='og:site_name' content='Mert Genç Anasayfa' />
             <meta property='og:type' content='website' />
             <meta property='og:image' content='/card.png' />
-            <title>Mert Genç - Homepage</title>
+            <title>Mert Genç - homepage</title>
          </Head>
          <AppBar />
          <Container maxW='container.md' pt='150px'>
