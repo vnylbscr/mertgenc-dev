@@ -4,7 +4,6 @@ import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import PageLayout from '../../components/layouts/pageLayout';
 import { getClient, urlFor } from '../../lib/sanity';
-//@ts-ignore
 import BlockContent from '@sanity/block-content-to-react';
 import { serializers } from '../../components/serializer';
 import moment from 'moment';
