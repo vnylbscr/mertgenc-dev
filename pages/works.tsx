@@ -3,7 +3,6 @@ import { Box, useColorModeValue, Text, Image } from '@chakra-ui/react';
 import React from 'react';
 import PageLayout from '../components/layouts/pageLayout';
 import WorksItem, { WorksItemProps } from '../components/worksItem';
-import { GetArrayType } from '../types/util-types';
 
 interface Props {}
 
