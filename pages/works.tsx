@@ -8,7 +8,15 @@ interface Props {}
 
 const WORK_ITEMS: Array<WorksItemProps> = [
    {
-      imageUrl: '/images/blogify.png',
+      images: [
+         '/images/blogify.png',
+         '/images/blogify_register.png',
+         '/images/blogify_login.png',
+         '/images/blogify_about.png',
+         '/images/blogify_contact.png',
+         '/images/blogify_homepage.png',
+         '/images/blogify_contributors.png',
+      ],
       title: 'Blogify',
       description:
          'Blogify is a web app that users can share blog and stories with other peoples. I write front and backend both.',
@@ -19,14 +27,14 @@ const WORK_ITEMS: Array<WorksItemProps> = [
       tags: ['react', 'typescript', 'apollo-graphql', 'graphql'],
    },
    {
-      imageUrl: '/images/f-someone-for-pet.png',
+      images: ['/images/f-someone-for-pet.png'],
       title: 'F SomeOne For Pet',
       description: 'F SomeOne For Pet is an app that find hosts or caretaker for your pets.',
       repoUrls: [{ repoUrl: 'https://github.com/vnylbscr/FSomeOneForPet', repoButtonTitle: 'repo url' }],
       tags: ['react-native', 'firebase', 'react-native-elements'],
    },
    {
-      imageUrl: '/images/truva.png',
+      images: ['/images/truva.png'],
       title: 'Truva Zemin',
       description: 'Truva Zemin is a freelance project that I made.',
       repoUrls: [{ repoUrl: 'https://github.com/vnylbscr/truva-zemin', repoButtonTitle: 'repo url' }],
@@ -34,7 +42,7 @@ const WORK_ITEMS: Array<WorksItemProps> = [
       tags: ['semantic-ui', 'react', 'next.js', 'seo-optimization', 'vercel-host'],
    },
    {
-      imageUrl: '/images/twitterClone.png',
+      images: ['/images/twitterClone.png'],
       title: 'Twitter Clone',
       description: 'A simple Twitter clone app.',
       repoUrls: [{ repoUrl: 'https://github.com/vnylbscr/twitter-clone', repoButtonTitle: 'repo url' }],
@@ -58,7 +66,7 @@ const Works = (props: Props) => {
                   description={item.description}
                   deployUrl={item.deployUrl}
                   repoUrls={item.repoUrls}
-                  imageUrl={item.imageUrl}
+                  images={item.images}
                   subtitle={item.subtitle}
                   tags={item.tags}
                />

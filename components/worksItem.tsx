@@ -3,6 +3,9 @@ import { Box, Center, Flex, Heading, HStack, Link, Stack, Text } from '@chakra-u
 import { Image } from '@chakra-ui/image';
 import React from 'react';
 import { Button } from '@chakra-ui/button';
+import Slider, { Settings } from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 type RepoUrls = {
    repoUrl: string;
@@ -10,7 +13,7 @@ type RepoUrls = {
 };
 
 export interface WorksItemProps {
-   imageUrl: string;
+   images: Array<string>;
    title: string;
    description: string;
    repoUrls: Array<RepoUrls>;
@@ -19,8 +22,18 @@ export interface WorksItemProps {
    tags?: Array<string>;
 }
 
+const SliderSettings: Settings = {
+   dots: true,
+   infinite: true,
+   speed: 500,
+   fade: true,
+   slidesToShow: 1,
+   slidesToScroll: 1,
+   autoplay: true,
+};
+
 const WorksItem: React.FC<WorksItemProps> = (props) => {
-   const { imageUrl, title, description, repoUrls, subtitle, deployUrl, tags } = props;
+   const { images, title, description, repoUrls, subtitle, deployUrl, tags } = props;
 
    return (
       <Center py={6}>
@@ -33,7 +46,16 @@ const WorksItem: React.FC<WorksItemProps> = (props) => {
             p={6}
          >
             <Box bg={'gray.100'} mt={-6} mx={-6} mb={6} pos={'relative'}>
-               <Image src={imageUrl} alt={title + 'Mert Genç' + tags?.map((tag) => tag)} layout={'fill'} />
+               <Slider {...SliderSettings}>
+                  {images.map((image, index) => (
+                     <Image
+                        key={image + index}
+                        src={image}
+                        alt={title + 'Mert Genç' + tags?.map((tag) => tag)}
+                        layout={'fill'}
+                     />
+                  ))}
+               </Slider>
             </Box>
             <Stack>
                <Text
