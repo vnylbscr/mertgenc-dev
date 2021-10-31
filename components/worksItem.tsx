@@ -23,10 +23,9 @@ export interface WorksItemProps {
 }
 
 const SliderSettings: Settings = {
-   dots: true,
+   dots: false,
    infinite: true,
-   speed: 500,
-   fade: true,
+   speed: 1000,
    slidesToShow: 1,
    slidesToScroll: 1,
    autoplay: true,
