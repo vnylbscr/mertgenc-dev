@@ -162,7 +162,7 @@ const Home = () => {
                         </Link>
                      </ListItem>
                      <ListItem>
-                        <Link href='https://twitter.com/accurcy' target='_blank'>
+                        <Link href='https://www.linkedin.com/in/gencmert/' target='_blank'>
                            <Button variant='ghost' colorScheme='linkedin'>
                               linkedin
                            </Button>
