@@ -1,28 +1,34 @@
-import { Box, Button, useColorModeValue, useColorMode, Avatar } from '@chakra-ui/react';
-import PageLayout from '../components/layouts/pageLayout';
-import { Container, Flex, Heading, Link, List, ListItem, Stack } from '@chakra-ui/layout';
-import ThemedText from '../components/themedText';
-import { useRouter } from 'next/dist/client/router';
-import NextLink from 'next/link';
+import React from 'react';
 import { DownloadIcon } from '@chakra-ui/icons';
-import { GithubIcon } from '../components/icons';
+import { Container, Flex, Heading, Link, List, ListItem, Stack } from '@chakra-ui/layout';
+import { Avatar, Box, Button, useColorModeValue } from '@chakra-ui/react';
+import PageLayout from '../components/layouts/pageLayout';
+import ThemedText from '../components/themedText';
 
 const Home = () => {
-   const { colorMode, toggleColorMode } = useColorMode();
-   const router = useRouter();
    return (
       <PageLayout>
          <Container>
-            <Flex align='center' justify='space-between'>
+            <Flex align='center' justify='space-between' direction={{ md: 'row', base: 'column-reverse' }}>
                <Box>
-                  <Heading variant='page-title' fontWeight='bold' fontSize='5xl'>
+                  <Heading
+                     variant='page-title'
+                     fontWeight='bold'
+                     fontSize='5xl'
+                     textAlign={{ base: 'center', md: 'initial' }}
+                  >
                      Mert Genç
                   </Heading>
-                  <ThemedText fontStyle='italic' color='grey' fontSize='3xl'>
+                  <ThemedText
+                     fontStyle='italic'
+                     textAlign={{ base: 'center', md: 'initial' }}
+                     color='grey'
+                     fontSize='3xl'
+                  >
                      Full Stack Developer, Designer
                   </ThemedText>
                </Box>
-               <Avatar src='/images/profile.jpg' size='2xl'></Avatar>
+               <Avatar mt={{ base: '4', md: undefined }} src='/images/profile.jpg' size='2xl' />
             </Flex>
 
             <Box mt={4}>
@@ -53,6 +59,7 @@ const Home = () => {
                   </Button>
                </a>
             </Box>
+
             <Box mt={4}>
                <Heading
                   borderBottomWidth='thin'
@@ -75,6 +82,7 @@ const Home = () => {
                   <ThemedText>Student University Computer Science and Open source stuffs</ThemedText>
                </Stack>
             </Box>
+
             <Box mt={4}>
                <Heading
                   borderBottomWidth='thin'

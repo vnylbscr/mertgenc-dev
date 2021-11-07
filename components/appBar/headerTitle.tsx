@@ -1,12 +1,10 @@
-import { Box, Avatar, Heading, Stack, Flex, useColorModeValue, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
 import { CodeIcon } from '../icons';
 
-interface Props {}
-
-const HeaderTitle = (props: Props) => {
+const HeaderTitle = () => {
    return (
       <Link href='/'>
          <a>

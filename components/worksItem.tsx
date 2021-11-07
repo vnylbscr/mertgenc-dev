@@ -1,11 +1,11 @@
-import { useColorModeValue } from '@chakra-ui/color-mode';
-import { Box, Center, Flex, Heading, HStack, Link, Stack, Text } from '@chakra-ui/layout';
-import { Image } from '@chakra-ui/image';
-import React from 'react';
 import { Button } from '@chakra-ui/button';
+import { useColorModeValue } from '@chakra-ui/color-mode';
+import { Image } from '@chakra-ui/image';
+import { Box, Center, Flex, Heading, Stack, Text } from '@chakra-ui/layout';
+import React from 'react';
 import Slider, { Settings } from 'react-slick';
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 type RepoUrls = {
    repoUrl: string;
@@ -87,7 +87,7 @@ const WorksItem: React.FC<WorksItemProps> = (props) => {
                   {description}
                </Text>
 
-               <Flex justify='space-between' style={{ marginTop: 32 }}>
+               <Flex flexWrap='wrap' justify='space-between' gridRowGap='6' style={{ marginTop: 32 }}>
                   {repoUrls.map((item) => (
                      <a key={item.repoUrl} target='_blank' href={item.repoUrl} rel='noreferrer'>
                         <Button colorScheme='linkedin'>{item.repoButtonTitle}</Button>
