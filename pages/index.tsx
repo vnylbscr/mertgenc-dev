@@ -191,8 +191,15 @@ const Home = () => {
                         </Link>
                      </ListItem>
                      <ListItem>
-                        <Link href='https://soundcloud.com/accuracybeat' target='_blank'>
+                        <Link href='https://stackoverflow.com/users/9338972/mert' target='_blank'>
                            <Button variant='ghost' colorScheme='orange'>
+                              stackoverflow
+                           </Button>
+                        </Link>
+                     </ListItem>
+                     <ListItem>
+                        <Link href='https://soundcloud.com/accuracybeat' target='_blank'>
+                           <Button variant='ghost' colorScheme='yellow'>
                               soundcloud
                            </Button>
                         </Link>
