@@ -42,8 +42,6 @@ const BlogItem: React.FC<{
    nextPost: any;
 }> = ({ currentPost, nextPost }) => {
    const router = useRouter();
-   console.log('nextPost', nextPost);
-
    const minRead = Math.ceil(currentPost.body.length / 20);
 
    return (

@@ -23,7 +23,7 @@ const configStyle = {
 
 export const AnimatedNavText = ({ title, href }: Props) => {
    const router = useRouter();
-   const isActive = router.pathname === href;
+   const isActive = router.pathname.includes(href);
 
    return (
       <NextLink href={href}>

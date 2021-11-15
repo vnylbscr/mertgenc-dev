@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 
 const PageLayout: React.FC<{ title?: string }> = ({ children, title }) => (
-   <motion.article
+   <motion.div
       initial='hidden'
       animate='enter'
       exit='exit'
@@ -22,7 +22,7 @@ const PageLayout: React.FC<{ title?: string }> = ({ children, title }) => (
          </Head>
       )}
       {children}
-   </motion.article>
+   </motion.div>
 );
 
 export default PageLayout;
