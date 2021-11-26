@@ -6,7 +6,8 @@
       "dev": "next dev",
       "build": "next build",
       "start": "next start",
-      "lint": "next lint"
+      "lint": "next lint",
+      "format": "prettier --write ."
    },
    "dependencies": {
       "@chakra-ui/icons": "^1.0.16",
@@ -32,6 +33,7 @@
       "@types/react-syntax-highlighter": "^13.5.2",
       "eslint": "^7.23.0",
       "eslint-config-next": "11.1.2",
+      "prettier": "^2.5.0",
       "typescript": "4.4.4"
    }
 }
