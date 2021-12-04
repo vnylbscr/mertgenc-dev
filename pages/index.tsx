@@ -115,8 +115,9 @@ const Home = () => {
                   <ThemedText color='grey'>
                      <ThemedText color='linkedin.400' fontSize='xl' fontWeight='bold' display='inline-block'>
                         {' '}
-                        Tech:
+                        Tech stack:
                      </ThemedText>{' '}
+                     <br />
                      Windows Server, CentOS, Active Directory
                   </ThemedText>
                </Box>
@@ -150,9 +151,11 @@ const Home = () => {
                   <ThemedText color='grey'>
                      <ThemedText color='linkedin.400' fontSize='xl' fontWeight='bold' display='inline-block'>
                         {' '}
-                        Tech:
+                        Tech Stack:
                      </ThemedText>{' '}
-                     Typescript, React.js, Node.js, Apollo GraphQL, Redis, MongoDB
+                     <br />
+                     React.js, GraphQL (Apollo Client / Server / Federation), NextJS, Micro Frontend, Micro Services,
+                     TypeScript, Node.js, Jest, Cypress, MongoDB, Express, Docker, AWS, Web Socket, Dependency Injection
                   </ThemedText>
                </Box>
                <Box mt={6}>
