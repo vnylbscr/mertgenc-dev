@@ -7,6 +7,18 @@ interface Props {}
 
 const WORK_ITEMS: Array<WorksItemProps> = [
    {
+      title: 'Svelte Happy Year',
+      description: 'A basic merry christimas app',
+      repoUrls: [
+         {
+            repoUrl: 'https://github.com/vnylbscr/svelte-happy-new-year',
+            repoButtonTitle: 'Preview',
+         },
+      ],
+      tags: ['svelte', 'css', 'javascript'],
+      images: ['/images/svelte-happy-new-year.png'],
+   },
+   {
       images: [
          '/images/blogify.png',
          '/images/blogify_register.png',

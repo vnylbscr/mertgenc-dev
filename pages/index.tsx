@@ -187,23 +187,9 @@ const Home = () => {
                         </Link>
                      </ListItem>
                      <ListItem>
-                        <Link href='https://instagram.com/gencmert_' target='_blank'>
-                           <Button variant='ghost' colorScheme='purple'>
-                              instagram
-                           </Button>
-                        </Link>
-                     </ListItem>
-                     <ListItem>
                         <Link href='https://stackoverflow.com/users/9338972/mert' target='_blank'>
                            <Button variant='ghost' colorScheme='orange'>
                               stackoverflow
-                           </Button>
-                        </Link>
-                     </ListItem>
-                     <ListItem>
-                        <Link href='https://soundcloud.com/accuracybeat' target='_blank'>
-                           <Button variant='ghost' colorScheme='yellow'>
-                              soundcloud
                            </Button>
                         </Link>
                      </ListItem>
