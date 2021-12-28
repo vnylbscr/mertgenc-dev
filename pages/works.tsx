@@ -12,11 +12,12 @@ const WORK_ITEMS: Array<WorksItemProps> = [
       repoUrls: [
          {
             repoUrl: 'https://github.com/vnylbscr/svelte-happy-new-year',
-            repoButtonTitle: 'Preview',
+            repoButtonTitle: 'Source Code',
          },
       ],
       tags: ['svelte', 'css', 'javascript'],
       images: ['/images/svelte-happy-new-year.png'],
+      deployUrl: 'https://svelte-new-year.netlify.app/',
    },
    {
       images: [
