@@ -7,19 +7,6 @@ interface Props {}
 
 const WORK_ITEMS: Array<WorksItemProps> = [
    {
-      title: 'Svelte Happy Year',
-      description: 'A basic merry christimas app',
-      repoUrls: [
-         {
-            repoUrl: 'https://github.com/vnylbscr/svelte-happy-new-year',
-            repoButtonTitle: 'Source Code',
-         },
-      ],
-      tags: ['svelte', 'css', 'javascript'],
-      images: ['/images/svelte-happy-new-year.png'],
-      deployUrl: 'https://svelte-new-year.netlify.app/',
-   },
-   {
       images: [
          '/images/blogify.png',
          '/images/blogify_register.png',
@@ -55,6 +42,19 @@ const WORK_ITEMS: Array<WorksItemProps> = [
          },
       ],
       tags: ['react-native', 'firebase', 'react-native-elements'],
+   },
+   {
+      title: 'Svelte Happy Year',
+      description: 'A basic merry christimas app',
+      repoUrls: [
+         {
+            repoUrl: 'https://github.com/vnylbscr/svelte-happy-new-year',
+            repoButtonTitle: 'Source Code',
+         },
+      ],
+      tags: ['svelte', 'css', 'javascript'],
+      images: ['/images/svelte-happy-new-year.png'],
+      deployUrl: 'https://svelte-new-year.netlify.app/',
    },
    {
       images: ['/images/truva.png'],
