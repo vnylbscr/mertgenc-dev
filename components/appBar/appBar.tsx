@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
 import {
    Box,
-   Stack,
+   Button,
    Flex,
-   useDisclosure,
-   MenuList,
-   MenuItem,
    Menu,
    MenuButton as MenuButtonChakra,
-   Button,
+   MenuItem,
+   MenuList,
+   Stack,
    useColorModeValue,
+   useDisclosure,
 } from '@chakra-ui/react';
-import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
-import HeaderTitle from './headerTitle';
+import { useRouter } from 'next/dist/client/router';
+import React from 'react';
+import { GithubIcon } from '../icons';
 import { MenuButton } from '../icons/menuButton';
 import AnimatedNavText from './animatedNavText';
 import ChangeThemeButton from './changeThemeButton';
-import { useRouter } from 'next/dist/client/router';
-import { GithubIcon } from '../icons';
+import HeaderTitle from './headerTitle';
 
 const SELECT_ITEMS = [
    {

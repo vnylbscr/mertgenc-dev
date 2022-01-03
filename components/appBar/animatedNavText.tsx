@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { Link, useColorModeValue, Text } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Link, Text, useColorModeValue } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
-
+import NextLink from 'next/link';
+import React from 'react';
 interface Props {
    title: string;
    href: string;
