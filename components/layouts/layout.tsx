@@ -1,11 +1,18 @@
 import { Container } from '@chakra-ui/layout';
-import { useColorModeValue, Box } from '@chakra-ui/react';
-import React from 'react';
+import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
+import React, { Fragment } from 'react';
+import styles from '../../styles/layout.module.scss';
 import AppBar from '../appBar/appBar';
 import Footer from '../footer';
 
-const MainLayout: React.FC = (props) => {
+const MainLayout: React.FC = ({ children }) => {
+   const [disableEffect, setDisableEffect] = React.useState(false);
+
+   const disableEffectChange = React.useCallback(() => {
+      setDisableEffect((p) => !p);
+   }, []);
+
    return (
       <Box as='main' pb={1}>
          <Head>
@@ -31,9 +38,17 @@ const MainLayout: React.FC = (props) => {
             <meta property='og:image' content='/card.png' />
             <title>Mert Genç - homepage</title>
          </Head>
-         <AppBar />
+         <AppBar disableEffect={disableEffect} disabledEffectChange={disableEffectChange} />
+         {!disableEffect && (
+            <Fragment>
+               <div className={styles.stars} />
+               <div className={styles.starsMedium} />
+               <div className={styles.starsBig} />
+            </Fragment>
+         )}
+
          <Container maxW='container.md' pt='150px'>
-            {props.children}
+            {children}
          </Container>
          <Footer />
       </Box>

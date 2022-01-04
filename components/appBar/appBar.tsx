@@ -2,6 +2,7 @@ import {
    Box,
    Button,
    Flex,
+   IconButton,
    Menu,
    MenuButton as MenuButtonChakra,
    MenuItem,
@@ -33,7 +34,10 @@ const SELECT_ITEMS = [
    },
 ];
 
-const AppBar = () => {
+const AppBar: React.FC<{
+   disabledEffectChange: () => void;
+   disableEffect: boolean;
+}> = ({ disabledEffectChange, disableEffect }) => {
    const { isOpen, onOpen, onClose } = useDisclosure();
    const router = useRouter();
    return (
@@ -73,6 +77,10 @@ const AppBar = () => {
                display={{ base: 'none', md: 'inline-flex' }}
             >
                source code
+            </Button>
+            <Button mr={4} colorScheme={'teal'} onClick={disabledEffectChange}>
+               {disableEffect ? 'Enable ' : 'Disable '}
+               background effect
             </Button>
             <ChangeThemeButton />
          </Box>
