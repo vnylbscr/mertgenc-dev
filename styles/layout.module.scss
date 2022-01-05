@@ -49,7 +49,7 @@ $shadows-big: multiple-box-shadow(100);
    height: 3px;
    background: transparent;
    box-shadow: $shadows-big;
-   animation: animStar 150s linear infinite;
+   animation: animStar 1000s linear infinite;
 
    &:after {
       content: ' ';

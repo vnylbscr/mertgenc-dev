@@ -39,13 +39,13 @@ const MainLayout: React.FC = ({ children }) => {
             <title>Mert Genç - homepage</title>
          </Head>
          <AppBar disableEffect={disableEffect} disabledEffectChange={disableEffectChange} />
-         {!disableEffect && (
-            <Fragment>
+         {/* {!disableEffect && (
+            <div>
                <div className={styles.stars} />
                <div className={styles.starsMedium} />
                <div className={styles.starsBig} />
-            </Fragment>
-         )}
+            </div>
+         )} */}
 
          <Container maxW='container.md' pt='150px'>
             {children}

@@ -77,10 +77,18 @@ const AppBar: React.FC<{
             >
                source code
             </Button>
-            <Button mr={4} colorScheme={'teal'} onClick={disabledEffectChange}>
+            {/* <Button
+               mr={4}
+               display={{
+                  base: 'none',
+                  lg: 'inline-flex',
+               }}
+               colorScheme={'teal'}
+               onClick={disabledEffectChange}
+            >
                {disableEffect ? 'Enable ' : 'Disable '}
                background effect
-            </Button>
+            </Button> */}
             <ChangeThemeButton />
          </Box>
          <Box display={{ base: 'block', md: 'none' }}>
