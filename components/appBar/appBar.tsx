@@ -18,7 +18,6 @@ import { MenuButton } from '../icons/menuButton';
 import AnimatedNavText from './animatedNavText';
 import ChangeThemeButton from './changeThemeButton';
 import HeaderTitle from './headerTitle';
-
 const SELECT_ITEMS = [
    {
       title: 'Works',
