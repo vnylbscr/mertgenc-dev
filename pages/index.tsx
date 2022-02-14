@@ -4,7 +4,8 @@ import { Container, Flex, Heading, Link, List, ListItem, Stack } from '@chakra-u
 import { Avatar, Box, Button, useColorModeValue } from '@chakra-ui/react';
 import PageLayout from '../components/layouts/pageLayout';
 import ThemedText from '../components/themedText';
-
+import ExperienceInfo from '../components/experienceInfo';
+import experienceData from '../lib/experienceData';
 const Home = () => {
    return (
       <PageLayout>
@@ -25,7 +26,7 @@ const Home = () => {
                      color='grey'
                      fontSize='3xl'
                   >
-                     Full Stack Developer, Designer
+                     Full Stack Developer
                   </ThemedText>
                </Box>
                <Avatar mt={{ base: '4', md: undefined }} src='/images/profile.jpg' size='2xl' />
@@ -123,40 +124,9 @@ const Home = () => {
                </Box>
 
                <Box display='inline-block' mt={6}>
-                  <Heading display='block' fontSize='2xl'>
-                     Full Stack Developer
-                     <ThemedText
-                        display='inline-block'
-                        color='grey'
-                        fontStyle='italic'
-                        fontWeight='normal'
-                        fontSize='xl'
-                        ml={2}
-                     >
-                        (Jun 2021 - Present)
-                     </ThemedText>
-                  </Heading>
-                  <ThemedText fontSize='xl'>
-                     <Link href='https://qpien.com' target='_blank'>
-                        Qpien
-                     </Link>
-                  </ThemedText>
-
-                  <ThemedText>
-                     Qpien is the best solution for those who want to manage their customers from a single platform. We
-                     are building User Interfaces on frontend using React.js. As a Developer, my responsibility is to
-                     design user-friendly interfaces, make them reusable and develop the code using the best practices
-                     methods.
-                  </ThemedText>
-                  <ThemedText color='grey'>
-                     <ThemedText color='linkedin.400' fontSize='xl' fontWeight='bold' display='inline-block'>
-                        {' '}
-                        Tech Stack:
-                     </ThemedText>{' '}
-                     <br />
-                     React.js, GraphQL (Apollo Client / Server / Federation), NextJS, Micro Frontend, Micro Services,
-                     TypeScript, Node.js, Jest, Cypress, MongoDB, Express, Docker, AWS, Web Socket, Dependency Injection
-                  </ThemedText>
+                  {experienceData.map((experience, index) => (
+                     <ExperienceInfo key={index} {...experience} />
+                  ))}
                </Box>
                <Box mt={6}>
                   <Heading
