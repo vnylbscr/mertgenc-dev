@@ -94,39 +94,7 @@ const Home = () => {
                </Heading>
 
                <Box display='inline-block' mt={6}>
-                  <Heading display='block' fontSize='2xl'>
-                     Information Technology Intern
-                     <ThemedText
-                        display='inline-block'
-                        color='grey'
-                        fontStyle='italic'
-                        fontWeight='normal'
-                        fontSize='xl'
-                        ml={{ base: 0, md: 2 }}
-                     >
-                        (Aug 2020 - Sep 2020)
-                     </ThemedText>
-                  </Heading>
-                  <ThemedText fontSize='xl'>Cekmekoy Municipality</ThemedText>
-
-                  <ThemedText>
-                     I have gained experience in the networks of a corporate company&apos;s computers, their topology
-                     installations and the management of servers.
-                  </ThemedText>
-                  <ThemedText color='grey'>
-                     <ThemedText color='linkedin.400' fontSize='xl' fontWeight='bold' display='inline-block'>
-                        {' '}
-                        Tech stack:
-                     </ThemedText>{' '}
-                     <br />
-                     Windows Server, CentOS, Active Directory
-                  </ThemedText>
-               </Box>
-
-               <Box display='inline-block' mt={6}>
-                  {experienceData.map((experience, index) => (
-                     <ExperienceInfo key={index} {...experience} />
-                  ))}
+                  {experienceData.map((experience, index) => <ExperienceInfo key={index} {...experience} />).reverse()}
                </Box>
                <Box mt={6}>
                   <Heading

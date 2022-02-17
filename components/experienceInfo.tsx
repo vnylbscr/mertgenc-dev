@@ -19,6 +19,8 @@ const ExperienceInfo: React.FC<ExperiencedInfoProps> = ({
    companyUrl,
    technologies,
 }) => {
+   console.log('techs', technologies?.length);
+
    return (
       <Box mt={4}>
          <Heading display='block' fontSize='2xl'>
@@ -41,7 +43,9 @@ const ExperienceInfo: React.FC<ExperiencedInfoProps> = ({
                      Tech Stack:
                   </ThemedText>
                   <br />
-                  {technologies?.map((tech) => tech)}
+                  {technologies?.map((tech, index) => {
+                     return index === technologies.length - 1 ? tech : tech + ', ';
+                  })}
                </ThemedText>
             </Fragment>
          )}
