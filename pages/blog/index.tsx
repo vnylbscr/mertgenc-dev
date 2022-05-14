@@ -1,13 +1,15 @@
 import { Box, Heading, Stack } from '@chakra-ui/layout';
-import { Container, Text, Image, Button, useColorModeValue } from '@chakra-ui/react';
+import { Container, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import groq from 'groq';
+import moment from 'moment';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 import React from 'react';
 import PageLayout from '../../components/layouts/pageLayout';
 import ThemedText from '../../components/themedText';
 import { getClient, urlFor } from '../../lib/sanity';
-import moment from 'moment';
-import Link from 'next/link';
 interface BlogPageProps {
    posts: any[];
 }
@@ -33,13 +35,13 @@ const postQuery = groq`*[_type == "post"] | order(_createdAt desc){
             }`;
 
 const BlogPage = ({ posts }: BlogPageProps) => {
-   const router = useRouter();
    const tagColor = useColorModeValue('black', 'white');
+   const { t } = useTranslation();
    return (
       <PageLayout title='Blog Posts'>
          <Container>
             <Heading py={6} textAlign='center'>
-               My Blog Posts
+               {t('blog.header_text')}
             </Heading>
 
             {posts.map((item) => (
@@ -77,11 +79,12 @@ const BlogPage = ({ posts }: BlogPageProps) => {
    );
 };
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ locale }: { locale: string }) => {
    const data = await getClient().fetch(postQuery);
 
    return {
       props: {
+         ...(await serverSideTranslations(locale, ['common'])),
          posts: data,
       },
    };

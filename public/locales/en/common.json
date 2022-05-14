@@ -23,8 +23,11 @@
    },
    "blog": {
       "title": "Blog",
+      "header_text": "My Blog Posts",
       "description": "Blog page",
-      "keywords": "blog, blog page"
+      "keywords": "blog, blog page",
+      "slug_button_text": "back to blog posts",
+      "next_post_recommendation": "recommended reading"
    },
    "404": {
       "title": "404",

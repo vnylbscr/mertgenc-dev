@@ -23,8 +23,11 @@
    },
    "blog": {
       "title": "Blog",
+      "header_text": "Blog ve makaleler",
       "description": "Blog ve makaleler",
-      "keywords": "blog, blog page"
+      "keywords": "blog, blog page",
+      "slug_button_text": "postlara geri dön",
+      "next_post_recommendation": "önerilen makale"
    },
    "404": {
       "title": "404",

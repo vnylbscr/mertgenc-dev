@@ -10,6 +10,8 @@ import moment from 'moment';
 import ThemedText from '../../components/themedText';
 import { Stack, Avatar, Button } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const currentPostQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -43,6 +45,7 @@ const BlogItem: React.FC<{
 }> = ({ currentPost, nextPost }) => {
    const router = useRouter();
    const minRead = Math.ceil(currentPost.body.length / 20);
+   const { t } = useTranslation();
 
    return (
       <PageLayout title={currentPost.title}>
@@ -58,9 +61,7 @@ const BlogItem: React.FC<{
                   onClick={() => router.push('/blog')}
                   my={4}
                   colorScheme='linkedin'
-               >
-                  back to posts
-               </Button>
+               ></Button>
 
                <Stack py={4} direction='row' spacing={3} align='center'>
                   <Avatar src={urlFor(currentPost?.author?.image).url() || undefined} rounded='2xl' />
@@ -73,7 +74,7 @@ const BlogItem: React.FC<{
                      {moment(currentPost._createdAt).format('DD MMM YYYY')}
                   </ThemedText>
                   <ThemedText fontSize='small' color='twitter.400'>
-                     {minRead} min read ☕
+                     {minRead} {t('blog.min_read')}
                   </ThemedText>
                </Stack>
             </Stack>
@@ -103,7 +104,7 @@ const BlogItem: React.FC<{
                }}
             >
                <Heading fontSize='xl' color='grey'>
-                  recommended reading:
+                  {t('blog.next_post_recommendation')}
                </Heading>
 
                <Heading fontSize='large'>{nextPost.title}</Heading>
@@ -114,7 +115,7 @@ const BlogItem: React.FC<{
    );
 };
 
-export const getStaticProps = async ({ params, preview = false }: any) => {
+export const getStaticProps = async ({ params, preview = false, locale }: any) => {
    const currentPost = await getClient(preview).fetch(currentPostQuery, {
       slug: params.slug,
    });
@@ -125,6 +126,7 @@ export const getStaticProps = async ({ params, preview = false }: any) => {
 
    return {
       props: {
+         ...(await serverSideTranslations(locale, ['common'])),
          currentPost,
          nextPost: findNextPost[0],
       },
