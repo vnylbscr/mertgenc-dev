@@ -68,7 +68,7 @@ const WorksItem: React.FC<WorksItemProps> = (props) => {
                </Text>
                <Stack align='center' gridRowGap={3} spacing={3} flexDir='row' direction='row' wrap='wrap'>
                   <Text fontSize='xl' fontWeight='bold' colorScheme='facebook'>
-                     Tech:
+                  
                   </Text>
 
                   {tags?.map((tag, index) => (

@@ -1,0 +1,49 @@
+{
+   "home": {
+      "title": "Anasayfa",
+      "description": "Anasayfa",
+      "keywords": "home, index, main, page, index page, main page",
+      "about": "Hakkımda",
+      "about_text": "Merhaba. Benim adım Mert ve fullstack geliştirici ve yazılım müh. Türkiye'den. 2021 yılında Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. Şu anda en sevdiğim teknolojiler: React.js, Typescript, GraphQL, Node.js, Full-stack geliştirme. İngilizce seviyem B2. Benimle ilgileniyor musun?",
+      "about_get_in_touch_text": "İletişime geç.",
+      "about_download_resume_text": "CV Görüntüle",
+      "biography_text": "Biyografi",
+      "stack_text_1": "Istanbul'da doğdum.",
+      "stack_text_2": "Universite eğitimi ve açık kaynak katkılarıyla yapılan projeler.",
+      "experience_text": "Deneyim",
+      "on_the_web_text": "On The Web",
+      "tech_text": "Teknolojiler",
+      "tech_stack_text": "Kullanılan Teknolojiler",
+      "software_engineer_text": "Yazılım Mühendisi & Fullstack Developer"
+   },
+   "works": {
+      "title": "Çalışmalar ve Projeler",
+      "description": "Çalışmalar ve Projeler page",
+      "keywords": "works, work, projects, projects page"
+   },
+   "blog": {
+      "title": "Blog",
+      "description": "Blog ve makaleler",
+      "keywords": "blog, blog page"
+   },
+   "404": {
+      "title": "404",
+      "description": "404 Sayfa Bulunamadı",
+      "header_description": "Bu sayfa sunucuda bulunamadı.",
+      "button_text": "anasayfaya dön",
+      "keywords": "404, sayfa bulunamadı"
+   },
+   "footer": {
+      "title": "Footer",
+      "description": "Footer",
+      "all_rights_reserved": "Tüm Hakları Saklıdır.",
+      "keywords": "footer, footer page"
+   },
+   "nav": {
+      "source_code": "kaynak kodu incele",
+      "works_text": "Projeler",
+      "blog_text": "Blog",
+      "about_text": "Hakkımda",
+      "change_theme_tooltip": "Tema Değiştir"
+   }
+}

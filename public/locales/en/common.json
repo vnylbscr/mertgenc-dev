@@ -1,0 +1,49 @@
+{
+   "home": {
+      "title": "Home",
+      "description": "Home page",
+      "keywords": "home, index, main, page, index page, main page",
+      "about": "About",
+      "about_text": "Hi. My name is Mert and I'm a fullstack developer & software eng. from Turkey. I graduaded from Sakarya University Computer Science in 2021. My favorite technologies right now are: React.js, Typescript, GraphQL, Node.js, Full-stack development. My English level is B2. Are you interested in me?",
+      "about_get_in_touch_text": "Get in touch, I would be grateful.",
+      "about_download_resume_text": "View my resume",
+      "biography_text": "Bio",
+      "stack_text_1": "Born in Istanbul",
+      "stack_text_2": "Student University Computer Science and Open source stuffs",
+      "experience_text": "Experience",
+      "on_the_web_text": "On The Web",
+      "tech": "Tech",
+      "tech_stack_text": "Tech Stack",
+      "software_engineer_text": "Software Engineer & Fullstack Developer"
+   },
+   "works": {
+      "title": "Works",
+      "description": "Works page",
+      "keywords": "works, work, projects, projects page"
+   },
+   "blog": {
+      "title": "Blog",
+      "description": "Blog page",
+      "keywords": "blog, blog page"
+   },
+   "404": {
+      "title": "404",
+      "description": "404 Not Found",
+      "header_description": "This page could be not found in this server.",
+      "button_text": "try to go home?",
+      "keywords": "404, page not found"
+   },
+   "footer": {
+      "title": "Footer",
+      "description": "Footer",
+      "all_rights_reserved": "All rights reserved.",
+      "keywords": "footer, footer page"
+   },
+   "nav": {
+      "source_code": "source code",
+      "works_text": "Works",
+      "blog_text": "Blog",
+      "about_text": "About",
+      "change_theme_tooltip": "Change theme"
+   }
+}

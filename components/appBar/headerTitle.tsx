@@ -28,7 +28,7 @@ const HeaderTitle = () => {
                      Mert Genç
                   </Heading>
                   <Text color='grey' fontFamily='mono'>
-                     developer
+                     Software Engineer
                   </Text>
                </Stack>
             </Flex>

@@ -1,4 +1,5 @@
 import { Box, Heading, Link } from '@chakra-ui/react';
+import { useTranslation } from 'next-i18next';
 import React, { Fragment } from 'react';
 import ThemedText from './themedText';
 
@@ -19,7 +20,7 @@ const ExperienceInfo: React.FC<ExperiencedInfoProps> = ({
    companyUrl,
    technologies,
 }) => {
-   console.log('techs', technologies?.length);
+   const { t } = useTranslation();
 
    return (
       <Box mt={4}>
@@ -40,7 +41,7 @@ const ExperienceInfo: React.FC<ExperiencedInfoProps> = ({
             <Fragment>
                <ThemedText color='grey'>
                   <ThemedText color='linkedin.400' fontSize='xl' fontWeight='bold' display='inline-block'>
-                     Tech Stack:
+                     {t('home.tech_stack_text')}
                   </ThemedText>
                   <br />
                   {technologies?.map((tech, index) => {
