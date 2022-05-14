@@ -1,8 +1,8 @@
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
    Box,
    Button,
    Flex,
-   IconButton,
    Menu,
    MenuButton as MenuButtonChakra,
    MenuItem,
@@ -11,34 +11,51 @@ import {
    useColorModeValue,
    useDisclosure,
 } from '@chakra-ui/react';
+import { TFunction, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 import React from 'react';
 import { GithubIcon } from '../icons';
 import { MenuButton } from '../icons/menuButton';
 import AnimatedNavText from './animatedNavText';
 import ChangeThemeButton from './changeThemeButton';
 import HeaderTitle from './headerTitle';
-const SELECT_ITEMS = [
+
+const SELECT_ITEMS = (t: TFunction) => [
    {
-      title: 'Works',
+      title: t('nav.works_text'),
       url: '/works',
    },
    {
-      title: 'Posts',
+      title: t('nav.blog_text'),
       url: '/blog',
    },
    {
-      title: 'About',
+      title: t('nav.about_text'),
       url: '/',
    },
 ];
 
-const AppBar: React.FC<{
-   disabledEffectChange: () => void;
-   disableEffect: boolean;
-}> = ({ disabledEffectChange, disableEffect }) => {
+const LANGUAGES = [
+   {
+      title: 'English',
+      route: 'en',
+   },
+   {
+      title: 'Türkçe',
+      route: 'tr',
+   },
+];
+
+const AppBar: React.FC = () => {
    const { isOpen, onOpen, onClose } = useDisclosure();
-   const router = useRouter();
+   const { isOpen: isOpenLanguageMenu, onOpen: onOpenLanguageMenu, onClose: onCloseLanguageMenu } = useDisclosure();
+
+   const { locale, locales, asPath } = useRouter();
+   const { t } = useTranslation();
+
+   const ROUTES = SELECT_ITEMS(t);
+
    return (
       <Flex
          as='nav'
@@ -63,10 +80,10 @@ const AppBar: React.FC<{
             alignItems='center'
             flexGrow={1}
          >
-            <AnimatedNavText href='/works' title='Works' />
-            <AnimatedNavText href='/blog' title='Posts' />
+            <AnimatedNavText href='/works' title={t('nav.works_text')} />
+            <AnimatedNavText href='/blog' title={t('nav.blog_text')} />
          </Stack>
-         <Box ml='auto' mr='24px'>
+         <Box ml='auto' mr='18px'>
             <Button
                rightIcon={<GithubIcon />}
                onClick={() => {
@@ -75,20 +92,8 @@ const AppBar: React.FC<{
                mr={4}
                display={{ base: 'none', md: 'inline-flex' }}
             >
-               source code
+               {t('nav.source_code')}
             </Button>
-            {/* <Button
-               mr={4}
-               display={{
-                  base: 'none',
-                  lg: 'inline-flex',
-               }}
-               colorScheme={'teal'}
-               onClick={disabledEffectChange}
-            >
-               {disableEffect ? 'Enable ' : 'Disable '}
-               background effect
-            </Button> */}
             <ChangeThemeButton />
          </Box>
          <Box display={{ base: 'block', md: 'none' }}>
@@ -97,10 +102,10 @@ const AppBar: React.FC<{
                   <MenuButton isOpen={isOpen} />
                </MenuButtonChakra>
                <MenuList>
-                  {SELECT_ITEMS.map((item) => (
-                     <MenuItem key={item.title} onClick={() => router.push(item.url)}>
-                        {item.title}
-                     </MenuItem>
+                  {ROUTES.map((item) => (
+                     <Link passHref href={item.url} key={item.title}>
+                        <MenuItem>{item.title}</MenuItem>
+                     </Link>
                   ))}
                   <MenuItem
                      rightIcon={<GithubIcon />}
@@ -108,8 +113,22 @@ const AppBar: React.FC<{
                         window.open('https://github.com/vnylbscr/mertgenc-dev', '_blank');
                      }}
                   >
-                     source code
+                     {t('nav.source_code')}
                   </MenuItem>
+               </MenuList>
+            </Menu>
+         </Box>
+         <Box marginRight={'4'} marginLeft={{ sm: '4', md: '0' }}>
+            <Menu isOpen={isOpenLanguageMenu} onOpen={onOpenLanguageMenu} onClose={onCloseLanguageMenu}>
+               <MenuButtonChakra as={Button} rightIcon={<ChevronDownIcon />}>
+                  {locale}
+               </MenuButtonChakra>
+               <MenuList>
+                  {locales?.map((item) => (
+                     <Link passHref key={item} href={asPath} locale={item}>
+                        <MenuItem>{LANGUAGES.find((x) => x.route === item)?.title}</MenuItem>
+                     </Link>
+                  ))}
                </MenuList>
             </Menu>
          </Box>

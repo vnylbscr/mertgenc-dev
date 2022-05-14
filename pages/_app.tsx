@@ -1,11 +1,12 @@
-import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import MainLayout from '../components/layouts/layout';
-import theme from '../lib/theme';
 import { AnimatePresence } from 'framer-motion';
-import React from 'react';
+import { appWithTranslation } from 'next-i18next';
+import type { AppProps } from 'next/app';
 import { useRouter } from 'next/dist/client/router';
+import React from 'react';
+import MainLayout from '../components/layouts/layout';
 import Loader from '../components/loader';
+import theme from '../lib/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
    const router = useRouter();
@@ -41,4 +42,5 @@ function MyApp({ Component, pageProps }: AppProps) {
       </ChakraProvider>
    );
 }
-export default MyApp;
+
+export default appWithTranslation(MyApp);

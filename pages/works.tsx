@@ -1,5 +1,8 @@
-import React from 'react';
 import { Container, Heading } from '@chakra-ui/layout';
+import { GetStaticPropsContext } from 'next';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import React from 'react';
 import PageLayout from '../components/layouts/pageLayout';
 import WorksItem, { WorksItemProps } from '../components/worksItem';
 
@@ -84,13 +87,25 @@ const WORK_ITEMS: Array<WorksItemProps> = [
    },
 ];
 
-const Works = (props: Props) => {
+export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
+   if (locale) {
+      return {
+         props: { ...(await serverSideTranslations(locale, ['common'])) },
+      };
+   }
+   return { props: {} };
+};
+
+const Works = () => {
+   const { t } = useTranslation();
    return (
-      <PageLayout title='Works'>
+      <PageLayout title={t('works.title')}>
          <Container>
             <Heading py={6} textAlign='center'>
-               My Personal Works
+               {t('works.title')}
             </Heading>
+
+            <div>{t('hello')}</div>
 
             {WORK_ITEMS.map((item, index) => (
                <WorksItem

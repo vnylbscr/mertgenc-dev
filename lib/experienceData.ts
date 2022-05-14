@@ -40,7 +40,18 @@ const experienceData: ExperiencedInfoProps[] = [
       company: 'Kocfinansman A.S',
       companyUrl: 'http://kocfinans.com.tr',
       workedDate: 'Feb 2022 - Present',
-      technologies: ['Spring Boot', 'React Native', 'Microservices', 'Oracle', 'PostgreSQL', 'DDD', 'TDD'],
+      technologies: [
+         'Spring Boot',
+         'React Native',
+         'Java EE',
+         'TypeScript',
+         'JUnit Mockito Etc.',
+         'Microservices',
+         'Oracle',
+         'Docker',
+         'Kubernetes',
+         'SQL',
+      ],
    },
 ];
 

@@ -1,18 +1,11 @@
 import { Container } from '@chakra-ui/layout';
 import { Box } from '@chakra-ui/react';
 import Head from 'next/head';
-import React, { Fragment } from 'react';
-import styles from '../../styles/layout.module.scss';
+import React from 'react';
 import AppBar from '../appBar/appBar';
 import Footer from '../footer';
 
 const MainLayout: React.FC = ({ children }) => {
-   const [disableEffect, setDisableEffect] = React.useState(false);
-
-   const disableEffectChange = React.useCallback(() => {
-      setDisableEffect((p) => !p);
-   }, []);
-
    return (
       <Box as='main' pb={1}>
          <Head>
@@ -38,14 +31,7 @@ const MainLayout: React.FC = ({ children }) => {
             <meta property='og:image' content='/card.png' />
             <title>Mert Genç - homepage</title>
          </Head>
-         <AppBar disableEffect={disableEffect} disabledEffectChange={disableEffectChange} />
-         {/* {!disableEffect && (
-            <div>
-               <div className={styles.stars} />
-               <div className={styles.starsMedium} />
-               <div className={styles.starsBig} />
-            </div>
-         )} */}
+         <AppBar />
 
          <Container maxW='container.md' pt='150px'>
             {children}
