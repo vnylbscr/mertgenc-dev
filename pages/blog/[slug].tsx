@@ -12,6 +12,7 @@ import { Stack, Avatar, Button } from '@chakra-ui/react';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import 'moment/locale/tr';
 
 const currentPostQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -61,7 +62,9 @@ const BlogItem: React.FC<{
                   onClick={() => router.push('/blog')}
                   my={4}
                   colorScheme='linkedin'
-               ></Button>
+               >
+                  {t('blog.slug_button_text')}
+               </Button>
 
                <Stack py={4} direction='row' spacing={3} align='center'>
                   <Avatar src={urlFor(currentPost?.author?.image).url() || undefined} rounded='2xl' />
@@ -71,10 +74,12 @@ const BlogItem: React.FC<{
                   </Link>
 
                   <ThemedText color='grey' fontStyle='italic' py={2} fontSize='large'>
-                     {moment(currentPost._createdAt).format('DD MMM YYYY')}
+                     {moment(currentPost._createdAt)
+                        .locale(router.locale === 'tr' ? 'tr' : 'en')
+                        .format('DD MMM YYYY')}
                   </ThemedText>
                   <ThemedText fontSize='small' color='twitter.400'>
-                     {minRead} {t('blog.min_read')}
+                     {minRead} {t('blog.min_read_time')} ☕
                   </ThemedText>
                </Stack>
             </Stack>
@@ -133,11 +138,20 @@ export const getStaticProps = async ({ params, preview = false, locale }: any) =
    };
 };
 
-export const getStaticPaths = async () => {
-   const paths: any = await getClient().fetch(groq`*[_type == "post" && defined(slug.current)][].slug.current`);
+export const getStaticPaths = async ({ locales }: any) => {
+   const paths: any[] = await getClient().fetch(groq`*[_type == "post" && defined(slug.current)][].slug.current`);
+
+   const pathsWithLocale = paths.map((slug: any) =>
+      locales.map((locale: string) => ({
+         params: { slug },
+         locale,
+      }))
+   );
+
+   const mergedArray = [].concat(...pathsWithLocale);
 
    return {
-      paths: paths.map((slug: any) => ({ params: { slug } })),
+      paths: mergedArray,
       fallback: false,
    };
 };

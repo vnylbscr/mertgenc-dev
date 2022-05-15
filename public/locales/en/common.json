@@ -4,7 +4,7 @@
       "description": "Home page",
       "keywords": "home, index, main, page, index page, main page",
       "about": "About",
-      "about_text": "Hi. My name is Mert and I'm a fullstack developer & software eng. from Turkey. I graduaded from Sakarya University Computer Science in 2021. My favorite technologies right now are: React.js, Typescript, GraphQL, Node.js, Full-stack development. My English level is B2. Are you interested in me?",
+      "about_text": "Hi. My name is Mert and I'm a fullstack developer from Turkey. I graduaded from Sakarya University Computer Science in 2021. My favorite technologies right now are: React.js, Typescript, GraphQL, Node.js, Full-stack development. My English level is B2. Are you interested in me?",
       "about_get_in_touch_text": "Get in touch, I would be grateful.",
       "about_download_resume_text": "View my resume",
       "biography_text": "Bio",
@@ -27,7 +27,8 @@
       "description": "Blog page",
       "keywords": "blog, blog page",
       "slug_button_text": "back to blog posts",
-      "next_post_recommendation": "recommended reading"
+      "next_post_recommendation": "recommended reading",
+      "min_read_time": "min read time"
    },
    "404": {
       "title": "404",

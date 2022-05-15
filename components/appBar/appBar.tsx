@@ -121,7 +121,7 @@ const AppBar: React.FC = () => {
          <Box marginRight={'4'} marginLeft={{ sm: '4', md: '0' }}>
             <Menu isOpen={isOpenLanguageMenu} onOpen={onOpenLanguageMenu} onClose={onCloseLanguageMenu}>
                <MenuButtonChakra as={Button} rightIcon={<ChevronDownIcon />}>
-                  {locale}
+                  {locale?.toLocaleUpperCase()}
                </MenuButtonChakra>
                <MenuList>
                   {locales?.map((item) => (

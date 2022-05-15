@@ -4,9 +4,8 @@ import { useRouter } from 'next/dist/client/router';
 import { GetStaticPropsContext } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-interface Props {}
 
-const CustomError = (props: Props) => {
+const CustomError = () => {
    const router = useRouter();
    const { t } = useTranslation();
    return (

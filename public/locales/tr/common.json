@@ -4,7 +4,7 @@
       "description": "Anasayfa",
       "keywords": "home, index, main, page, index page, main page",
       "about": "Hakkımda",
-      "about_text": "Merhaba. Benim adım Mert ve fullstack geliştirici ve yazılım müh. Türkiye'den. 2021 yılında Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. Şu anda en sevdiğim teknolojiler: React.js, Typescript, GraphQL, Node.js, Full-stack geliştirme. İngilizce seviyem B2. Benimle ilgileniyor musun?",
+      "about_text": "Merhaba. Ben Mert ✋ Türkiye'den fullstack geliştirici ve yazılım mühendisiyim. 2021 yılında Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünden mezun oldum. Şu anda kullandığım ve en sevdiğim teknolojiler: React.js, Typescript, GraphQL, Node.js, Full-stack Geliştirme. Benimle ilgileniyor musun?",
       "about_get_in_touch_text": "İletişime geç.",
       "about_download_resume_text": "CV Görüntüle",
       "biography_text": "Biyografi",
@@ -27,7 +27,8 @@
       "description": "Blog ve makaleler",
       "keywords": "blog, blog page",
       "slug_button_text": "postlara geri dön",
-      "next_post_recommendation": "önerilen makale"
+      "next_post_recommendation": "önerilen makale",
+      "min_read_time": "dakika okuma süresi"
    },
    "404": {
       "title": "404",
