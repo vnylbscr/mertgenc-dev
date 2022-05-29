@@ -105,8 +105,6 @@ const Works = () => {
                {t('works.title')}
             </Heading>
 
-            <div>{t('hello')}</div>
-
             {WORK_ITEMS.map((item, index) => (
                <WorksItem
                   key={item.title + index}
