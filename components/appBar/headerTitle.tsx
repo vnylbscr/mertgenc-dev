@@ -24,7 +24,7 @@ const HeaderTitle = () => {
                   </motion.svg>
                </Box>
                <Stack spacing={1}>
-                  <Heading color={useColorModeValue('light', 'dark')} fontFamily='mono' fontSize='2xl'>
+                  <Heading color={useColorModeValue('light', 'dark')} fontSize='2xl'>
                      Mert Genç
                   </Heading>
                   <Text color='grey' fontFamily='mono'>

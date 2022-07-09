@@ -37,42 +37,40 @@ const BlogPage = ({ posts }: BlogPageProps) => {
    const { t } = useTranslation();
    return (
       <PageLayout title='Blog Posts'>
-         <Container>
-            <Heading py={6} textAlign='center'>
-               {t('blog.header_text')}
-            </Heading>
+         <Heading py={6} textAlign='center'>
+            {t('blog.header_text')}
+         </Heading>
 
-            {posts.map((item) => (
-               <Link key={item.title} passHref href={`/blog/${item.slug.current}`}>
-                  <Stack
-                     _hover={{
-                        cursor: 'pointer',
-                        color: 'linkedin.400',
-                        transition: 'all .4s',
-                     }}
-                     py={6}
-                  >
-                     <Image src={urlFor(item.mainImage).url() || undefined} alt={item.name + item.title} />
-                     <Stack pt={4} align='center' gridRowGap={3} spacing={3} flexDir='row' direction='row' wrap='wrap'>
-                        {item?.categories?.map((tag: any, index: number) => (
-                           <Box key={tag + index} bgColor={'linkedin.400'} p={2} borderRadius='xl'>
-                              <Text isTruncated color={tagColor} fontWeight='bold'>
-                                 #{tag?.title}
-                              </Text>
-                           </Box>
-                        ))}
-                     </Stack>
-                     <Heading py={4}>
-                        {item.title}
-                        <ThemedText my={4} color='linkedin.400' fontSize='large'>
-                           {moment(item._createdAt).fromNow()}
-                        </ThemedText>
-                     </Heading>
-                     <Text color='grey'>{item.subtitle}</Text>
+         {posts.map((item) => (
+            <Link key={item.title} passHref href={`/blog/${item.slug.current}`}>
+               <Stack
+                  _hover={{
+                     cursor: 'pointer',
+                     color: 'linkedin.400',
+                     transition: 'all .4s',
+                  }}
+                  py={6}
+               >
+                  <Image src={urlFor(item.mainImage).url() || undefined} alt={item.name + item.title} />
+                  <Stack pt={4} align='center' gridRowGap={3} spacing={3} flexDir='row' direction='row' wrap='wrap'>
+                     {item?.categories?.map((tag: any, index: number) => (
+                        <Box key={tag + index} bgColor={'linkedin.400'} p={2} borderRadius='xl'>
+                           <Text isTruncated color={tagColor} fontWeight='bold'>
+                              #{tag?.title}
+                           </Text>
+                        </Box>
+                     ))}
                   </Stack>
-               </Link>
-            ))}
-         </Container>
+                  <Heading py={4}>
+                     {item.title}
+                     <ThemedText my={4} color='linkedin.400' fontSize='large'>
+                        {moment(item._createdAt).fromNow()}
+                     </ThemedText>
+                  </Heading>
+                  <Text color='grey'>{item.subtitle}</Text>
+               </Stack>
+            </Link>
+         ))}
       </PageLayout>
    );
 };

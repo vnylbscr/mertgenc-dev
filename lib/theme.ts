@@ -5,6 +5,12 @@ const config: ThemeConfig = {
    useSystemColorMode: false,
 };
 
-const theme = extendTheme({ config });
+const theme = extendTheme({
+   config,
+   fonts: {
+      body: '"Nunito", sans-serif',
+      heading: '"Nunito", sans-serif',
+   },
+});
 
 export default theme;

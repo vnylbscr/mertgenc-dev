@@ -7,6 +7,7 @@ import React from 'react';
 import MainLayout from '../components/layouts/layout';
 import Loader from '../components/loader';
 import theme from '../lib/theme';
+import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
    const router = useRouter();

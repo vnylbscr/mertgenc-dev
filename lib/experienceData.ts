@@ -5,9 +5,9 @@ const experienceData: ExperiencedInfoProps[] = [
       title: 'Information Technology Intern',
       company: 'Cekmekoy Municipality',
       description:
-         'I have gained experience in the networks of a corporate company&apos;s computers, their topology installations and the management of servers.',
+         "I have gained experience in the networks of a corporate company's computers, their topology installations and the management of servers.",
       companyUrl: 'https://www.cekmekoy.bel.tr/bilgi-islem-mudurlugu/',
-      workedDate: 'June 2021 - February 2022',
+      workedDate: 'August 2020 - September 2020',
       technologies: ['Windows Server', 'CentOS', 'Active Directory'],
    },
    {

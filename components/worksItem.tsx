@@ -23,12 +23,13 @@ export interface WorksItemProps {
 }
 
 const SliderSettings: Settings = {
-   dots: false,
+   dots: true,
    infinite: true,
    speed: 1000,
    slidesToShow: 1,
    slidesToScroll: 1,
    autoplay: true,
+   dotsClass: `slick-dots custom-dots`,
 };
 
 const WorksItem: React.FC<WorksItemProps> = (props) => {
@@ -67,10 +68,6 @@ const WorksItem: React.FC<WorksItemProps> = (props) => {
                   {title}
                </Text>
                <Stack align='center' gridRowGap={3} spacing={3} flexDir='row' direction='row' wrap='wrap'>
-                  <Text fontSize='xl' fontWeight='bold' colorScheme='facebook'>
-                  
-                  </Text>
-
                   {tags?.map((tag, index) => (
                      <Box key={tag + index} bgColor={'linkedin.400'} p={2} borderRadius='xl'>
                         <Text isTruncated fontWeight='bold'>

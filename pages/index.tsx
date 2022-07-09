@@ -24,137 +24,130 @@ const Home = () => {
 
    return (
       <PageLayout>
-         <Container>
-            <Flex align='center' justify='space-between' direction={{ md: 'row', base: 'column-reverse' }}>
-               <Box>
-                  <Heading
-                     variant='page-title'
-                     fontWeight='bold'
-                     fontSize='5xl'
-                     textAlign={{ base: 'center', md: 'initial' }}
-                  >
-                     Mert Genç
-                  </Heading>
-                  <ThemedText
-                     fontStyle='italic'
-                     textAlign={{ base: 'center', md: 'initial' }}
-                     color='grey'
-                     fontSize='3xl'
-                  >
-                     {t('home.software_engineer_text')}
-                  </ThemedText>
-               </Box>
-               <Avatar mt={{ base: '4', md: undefined }} src='/images/profile.jpg' size='2xl' />
-            </Flex>
-
-            <Box mt={4}>
+         <Flex align='center' justify='space-between' direction={{ md: 'row', base: 'column-reverse' }}>
+            <Box>
                <Heading
-                  borderBottomWidth='thin'
-                  borderBottom='4px'
-                  borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
+                  variant='page-title'
+                  fontWeight='bold'
+                  fontSize='5xl'
+                  textAlign={{ base: 'center', md: 'initial' }}
                >
-                  {t('home.about')}
+                  Mert Genç
                </Heading>
-               <ThemedText mt={6} fontSize='xl'>
-                  {t('home.about_text')}
-                  <Link
-                     ml={2}
-                     target='_blank'
-                     color='linkedin.400'
-                     href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'
-                  >
-                     {t('home.about_get_in_touch_text')}
-                  </Link>
+               <ThemedText fontStyle='italic' textAlign={{ base: 'center', md: 'initial' }} color='grey' fontSize='3xl'>
+                  {t('home.software_engineer_text')}
                </ThemedText>
-
-               <a target='_blank' href='/myNewResume.pdf'>
-                  <Button mt={6} rightIcon={<DownloadIcon />} isFullWidth colorScheme='twitter'>
-                     {t('home.about_download_resume_text')}
-                  </Button>
-               </a>
             </Box>
+            <Avatar mt={{ base: '4', md: undefined }} src='/images/profile.jpg' size='2xl' />
+         </Flex>
 
-            <Box mt={4}>
+         <Box mt={4}>
+            <Heading
+               borderBottomWidth='thin'
+               borderBottom='4px'
+               borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
+            >
+               {t('home.about')}
+            </Heading>
+            <ThemedText mt={6} fontSize='xl'>
+               {t('home.about_text')}
+               <Link
+                  ml={2}
+                  target='_blank'
+                  color='linkedin.400'
+                  href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'
+               >
+                  {t('home.about_get_in_touch_text')}
+               </Link>
+            </ThemedText>
+
+            <a target='_blank' href='/myNewResume.pdf'>
+               <Button mt={6} rightIcon={<DownloadIcon />} isFullWidth colorScheme='twitter'>
+                  {t('home.about_download_resume_text')}
+               </Button>
+            </a>
+         </Box>
+
+         <Box mt={4}>
+            <Heading
+               borderBottomWidth='thin'
+               borderBottom='4px'
+               borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
+            >
+               {t('home.biography_text')}
+            </Heading>
+
+            <Stack py={4} direction='row' align='center' spacing={2}>
+               <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
+                  1997
+               </Heading>
+               <ThemedText>{t('home.stack_text_1')}</ThemedText>
+            </Stack>
+            <Stack py={4} direction='row' align='center' spacing={2}>
+               <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
+                  2016 - 2021
+               </Heading>
+               <ThemedText>{t('home.stack_text_2')}</ThemedText>
+            </Stack>
+         </Box>
+
+         <Box mt={4}>
+            <Heading
+               borderBottomWidth='thin'
+               borderBottom='4px'
+               borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
+            >
+               {t('home.experience_text')}
+            </Heading>
+
+            <Box display='inline-block' mt={6}>
+               {experienceData.map((experience, index) => <ExperienceInfo key={index} {...experience} />).reverse()}
+            </Box>
+            <Box mt={6}>
                <Heading
                   borderBottomWidth='thin'
                   borderBottom='4px'
                   borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
                >
-                  {t('home.biography_text')}
+                  {t('home.on_the_web_text')}
                </Heading>
-
-               <Stack py={4} direction='row' align='center' spacing={2}>
-                  <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
-                     1997
-                  </Heading>
-                  <ThemedText>{t('home.stack_text_1')}</ThemedText>
-               </Stack>
-               <Stack py={4} direction='row' align='center' spacing={2}>
-                  <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
-                     2016 - 2021
-                  </Heading>
-                  <ThemedText>{t('home.stack_text_2')}</ThemedText>
-               </Stack>
+               <List mt={6}>
+                  <ListItem>
+                     <Link href='https://github.com/vnylbscr' target='_blank'>
+                        <Button variant='ghost'>github</Button>
+                     </Link>
+                  </ListItem>
+                  <ListItem>
+                     <Link href='https://www.linkedin.com/in/gencmert/' target='_blank'>
+                        <Button variant='ghost' colorScheme='linkedin'>
+                           linkedin
+                        </Button>
+                     </Link>
+                  </ListItem>
+                  <ListItem>
+                     <Link href='https://twitter.com/accurcy' target='_blank'>
+                        <Button variant='ghost' colorScheme='twitter'>
+                           twitter
+                        </Button>
+                     </Link>
+                  </ListItem>
+                  <ListItem>
+                     <Link href='https://stackoverflow.com/users/9338972/mert' target='_blank'>
+                        <Button variant='ghost' colorScheme='orange'>
+                           stackoverflow
+                        </Button>
+                     </Link>
+                  </ListItem>
+                  <ListItem>
+                     <Link href='https://mastodon.social/@mertgenc' target='_blank'>
+                        <Button variant='ghost' colorScheme='pink'>
+                           mastodon
+                        </Button>
+                     </Link>
+                  </ListItem>
+               </List>
             </Box>
-
-            <Box mt={4}>
-               <Heading
-                  borderBottomWidth='thin'
-                  borderBottom='4px'
-                  borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
-               >
-                  {t('home.experience_text')}
-               </Heading>
-
-               <Box display='inline-block' mt={6}>
-                  {experienceData.map((experience, index) => <ExperienceInfo key={index} {...experience} />).reverse()}
-               </Box>
-               <Box mt={6}>
-                  <Heading
-                     borderBottomWidth='thin'
-                     borderBottom='4px'
-                     borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
-                  >
-                     {t('home.on_the_web_text')}
-                  </Heading>
-                  <List mt={6}>
-                     <ListItem>
-                        <Link href='https://github.com/vnylbscr' target='_blank'>
-                           <Button variant='ghost'>github</Button>
-                        </Link>
-                     </ListItem>
-                     <ListItem>
-                        <Link href='https://www.linkedin.com/in/gencmert/' target='_blank'>
-                           <Button variant='ghost' colorScheme='linkedin'>
-                              linkedin
-                           </Button>
-                        </Link>
-                     </ListItem>
-                     <ListItem>
-                        <Link href='https://twitter.com/accurcy' target='_blank'>
-                           <Button variant='ghost' colorScheme='twitter'>
-                              twitter
-                           </Button>
-                        </Link>
-                     </ListItem>
-                     <ListItem>
-                        <Link href='https://stackoverflow.com/users/9338972/mert' target='_blank'>
-                           <Button variant='ghost' colorScheme='orange'>
-                              stackoverflow
-                           </Button>
-                        </Link>
-                     </ListItem>
-                     <ListItem>
-                        <Link href='https://mastodon.social/@mertgenc' target='_blank'>
-                           <Button variant='ghost' colorScheme='pink'>
-                              mastodon
-                           </Button>
-                        </Link>
-                     </ListItem>
-                  </List>
-               </Box>
-            </Box>
-         </Container>
+         </Box>
       </PageLayout>
    );
 };

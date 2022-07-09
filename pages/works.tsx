@@ -35,6 +35,27 @@ const WORK_ITEMS: Array<WorksItemProps> = [
       tags: ['react', 'typescript', 'apollo-graphql', 'graphql', 'node.js', 'redis', 'express.js'],
    },
    {
+      images: [
+         'images/notestack_home.png',
+         'images/notestack_search.png',
+         'images/notestack_login.png',
+         'images/notestack_login.png',
+      ],
+      title: 'NoteStack',
+      description: 'Notestack is a web app that user can take colored notes. Front end next.js, back end: spring boot.',
+      repoUrls: [
+         {
+            repoUrl: 'https://github.com/vnylbscr/notestack-client-next-js',
+            repoButtonTitle: 'front end repo',
+         },
+         {
+            repoUrl: 'https://github.com/vnylbscr/spring-boot-next-js-rest',
+            repoButtonTitle: 'back end repo',
+         },
+      ],
+      tags: ['react', 'typescript', 'java-ee', 'next.js', 'node.js', 'spring-boot', 'mongodb', 'heroku', 'docker'],
+   },
+   {
       images: ['/images/f-someone-for-pet.png'],
       title: 'F SomeOne For Pet',
       description: 'F SomeOne For Pet is an app that find hosts or caretaker for your pets.',
@@ -100,24 +121,22 @@ const Works = () => {
    const { t } = useTranslation();
    return (
       <PageLayout title={t('works.title')}>
-         <Container>
-            <Heading py={6} textAlign='center'>
-               {t('works.title')}
-            </Heading>
+         <Heading py={6} textAlign='center'>
+            {t('works.title')}
+         </Heading>
 
-            {WORK_ITEMS.map((item, index) => (
-               <WorksItem
-                  key={item.title + index}
-                  title={item.title}
-                  description={item.description}
-                  deployUrl={item.deployUrl}
-                  repoUrls={item.repoUrls}
-                  images={item.images}
-                  subtitle={item.subtitle}
-                  tags={item.tags}
-               />
-            ))}
-         </Container>
+         {WORK_ITEMS.map((item, index) => (
+            <WorksItem
+               key={item.title + index}
+               title={item.title}
+               description={item.description}
+               deployUrl={item.deployUrl}
+               repoUrls={item.repoUrls}
+               images={item.images}
+               subtitle={item.subtitle}
+               tags={item.tags}
+            />
+         ))}
       </PageLayout>
    );
 };
