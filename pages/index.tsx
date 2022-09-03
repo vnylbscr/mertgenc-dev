@@ -38,7 +38,6 @@ const Home = () => {
                   {t('home.software_engineer_text')}
                </ThemedText>
             </Box>
-            <Avatar mt={{ base: '4', md: undefined }} src='/images/profile.jpg' size='2xl' />
          </Flex>
 
          <Box mt={4}>
