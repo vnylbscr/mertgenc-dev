@@ -74,29 +74,6 @@ const Home = () => {
                borderBottom='4px'
                borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
             >
-               {t('home.biography_text')}
-            </Heading>
-
-            <Stack py={4} direction='row' align='center' spacing={2}>
-               <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
-                  1997
-               </Heading>
-               <ThemedText>{t('home.stack_text_1')}</ThemedText>
-            </Stack>
-            <Stack py={4} direction='row' align='center' spacing={2}>
-               <Heading borderBottom='1px' borderColor='ActiveBorder' fontSize='xl'>
-                  2016 - 2021
-               </Heading>
-               <ThemedText>{t('home.stack_text_2')}</ThemedText>
-            </Stack>
-         </Box>
-
-         <Box mt={4}>
-            <Heading
-               borderBottomWidth='thin'
-               borderBottom='4px'
-               borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
-            >
                {t('home.experience_text')}
             </Heading>
 
