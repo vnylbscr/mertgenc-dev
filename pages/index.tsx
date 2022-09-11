@@ -1,14 +1,15 @@
 import { DownloadIcon } from '@chakra-ui/icons';
-import { Container, Flex, Heading, Link, List, ListItem, Stack } from '@chakra-ui/layout';
-import { Avatar, Box, Button, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Heading, Link, List, Stack } from '@chakra-ui/layout';
+import { Box, Button, useColorModeValue } from '@chakra-ui/react';
 import { GetStaticPropsContext } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import React from 'react';
 import ExperienceInfo from '../components/experienceInfo';
 import PageLayout from '../components/layouts/pageLayout';
+import OnTheWebLinkItem from '../components/onTheWebLinkItem';
 import ThemedText from '../components/themedText';
 import experienceData from '../lib/experienceData';
+import onTheWebLinks from '../lib/onTheWebLinks';
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
    if (locale) {
@@ -111,39 +112,9 @@ const Home = () => {
                   {t('home.on_the_web_text')}
                </Heading>
                <List mt={6}>
-                  <ListItem>
-                     <Link href='https://github.com/vnylbscr' target='_blank'>
-                        <Button variant='ghost'>github</Button>
-                     </Link>
-                  </ListItem>
-                  <ListItem>
-                     <Link href='https://www.linkedin.com/in/gencmert/' target='_blank'>
-                        <Button variant='ghost' colorScheme='linkedin'>
-                           linkedin
-                        </Button>
-                     </Link>
-                  </ListItem>
-                  <ListItem>
-                     <Link href='https://twitter.com/accurcy' target='_blank'>
-                        <Button variant='ghost' colorScheme='twitter'>
-                           twitter
-                        </Button>
-                     </Link>
-                  </ListItem>
-                  <ListItem>
-                     <Link href='https://stackoverflow.com/users/9338972/mert' target='_blank'>
-                        <Button variant='ghost' colorScheme='orange'>
-                           stackoverflow
-                        </Button>
-                     </Link>
-                  </ListItem>
-                  <ListItem>
-                     <Link href='https://mastodon.social/@mertgenc' target='_blank'>
-                        <Button variant='ghost' colorScheme='pink'>
-                           mastodon
-                        </Button>
-                     </Link>
-                  </ListItem>
+                  {onTheWebLinks.map((item) => (
+                     <OnTheWebLinkItem key={item.href} {...item} />
+                  ))}
                </List>
             </Box>
          </Box>
