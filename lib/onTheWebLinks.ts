@@ -10,11 +10,6 @@ const WEB_LINKS = [
       colorScheme: 'linkedin',
    },
    {
-      text: 'twitter',
-      href: 'https://twitter.com/accurcy',
-      colorScheme: 'twitter',
-   },
-   {
       text: 'stackoverflow',
       href: 'https://stackoverflow.com/users/9338972/mert',
       colorScheme: 'yellow',
