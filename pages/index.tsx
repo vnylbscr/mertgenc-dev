@@ -25,7 +25,15 @@ const Home = () => {
 
    return (
       <PageLayout>
-         <Flex align='center' justify='space-between' direction={{ md: 'row', base: 'column-reverse' }}>
+         <Flex
+            align='center'
+            mt={{
+               base: 12,
+               md: 0,
+            }}
+            justify='space-between'
+            direction={{ md: 'row', base: 'column-reverse' }}
+         >
             <Box>
                <Heading
                   variant='page-title'
