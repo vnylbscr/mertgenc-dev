@@ -50,30 +50,9 @@ const Home = () => {
          </Flex>
 
          <Box mt={4}>
-            <Heading
-               borderBottomWidth='thin'
-               borderBottom='4px'
-               borderColor={useColorModeValue('grey', 'whiteAlpha.400')}
-            >
-               {t('home.about')}
-            </Heading>
             <ThemedText mt={6} fontSize='xl'>
                {t('home.about_text')}
-               <Link
-                  ml={2}
-                  target='_blank'
-                  color='linkedin.400'
-                  href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'
-               >
-                  {t('home.about_get_in_touch_text')}
-               </Link>
             </ThemedText>
-
-            <a target='_blank' href='/myNewResume.pdf'>
-               <Button mt={6} rightIcon={<DownloadIcon />} isFullWidth colorScheme='twitter'>
-                  {t('home.about_download_resume_text')}
-               </Button>
-            </a>
          </Box>
 
          <Box mt={4}>

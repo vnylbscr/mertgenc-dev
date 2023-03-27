@@ -25,7 +25,7 @@ export interface WorksItemProps {
 const SliderSettings: Settings = {
    dots: true,
    infinite: true,
-   speed: 1000,
+   speed: 1500,
    slidesToShow: 1,
    slidesToScroll: 1,
    autoplay: true,
@@ -52,7 +52,7 @@ const WorksItem: React.FC<WorksItemProps> = (props) => {
                         key={image + index}
                         src={image}
                         alt={title + 'Mert Genç' + tags?.map((tag) => tag)}
-                        layout={'fill'}
+                        layout={'responsive'}
                      />
                   ))}
                </Slider>
