@@ -19,6 +19,11 @@ const WEB_LINKS = [
       href: 'https://mastodon.social/@mertgenc',
       colorScheme: 'pink',
    },
+   {
+      text: 'resume',
+      href: '/myNewResume.pdf',
+      colorScheme: 'green',
+   },
 ];
 
 export default WEB_LINKS;

@@ -11,7 +11,7 @@ const PageLayout: React.FC<{ title?: string }> = ({ children, title }) => (
          enter: { opacity: 1, x: 0, y: 0 },
          exit: { opacity: 0, x: -20, y: 40 },
       }}
-      transition={{ duration: 0.6, type: 'linear' }}
+      transition={{ duration: 0.8, type: 'linear' }}
       style={{ position: 'relative' }}
    >
       {title && (
