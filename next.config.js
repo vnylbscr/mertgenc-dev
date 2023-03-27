@@ -9,7 +9,7 @@ module.exports = withImages({
    },
    reactStrictMode: true,
    fileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
-   webpack(config, _options) {
+   webpack(config) {
       return config;
    },
    i18n,

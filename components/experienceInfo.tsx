@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Link } from '@chakra-ui/react';
+import { Box, Heading, Link } from '@chakra-ui/react';
 import { useTranslation } from 'next-i18next';
 import React, { Fragment } from 'react';
 import ThemedText from './themedText';

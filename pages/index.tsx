@@ -1,6 +1,5 @@
-import { DownloadIcon } from '@chakra-ui/icons';
-import { Flex, Heading, Link, List, Stack } from '@chakra-ui/layout';
-import { Box, Button, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Heading, List } from '@chakra-ui/layout';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import { GetStaticPropsContext } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

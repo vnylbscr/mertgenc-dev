@@ -1,5 +1,5 @@
 import { Box, Heading, Stack } from '@chakra-ui/layout';
-import { Container, Image, Text, useColorModeValue } from '@chakra-ui/react';
+import { Image, Text, useColorModeValue } from '@chakra-ui/react';
 import groq from 'groq';
 import moment from 'moment';
 import { useTranslation } from 'next-i18next';
