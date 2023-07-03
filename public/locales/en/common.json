@@ -4,7 +4,7 @@
       "description": "Home page",
       "keywords": "home, index, main, page, index page, main page",
       "about": "About",
-      "about_text": "Hi there 👋 I'm Mert. I am a solution-oriented full-stack developer who is constantly improving myself with my passion for computer-human interaction and open source technologies. I am currently working as a full-stack developer at a finance company in beautiful İstanbul.",
+      "about_text": "Hi there 👋 Welcome to my personal website. I'm Mert. I am a solution-oriented full-stack developer who is constantly improving myself with my passion for computer-human interaction and open source technologies. I am currently working as a full-stack developer at a finance company in beautiful İstanbul.",
       "about_get_in_touch_text": "Get in touch, I would be grateful.",
       "about_download_resume_text": "View my resume",
       "biography_text": "Bio",
@@ -49,5 +49,8 @@
       "blog_text": "Blog",
       "about_text": "About",
       "change_theme_tooltip": "Change theme"
+   },
+   "about": {
+      "get_started_text": "Hello! From here you can access my resume about my previous experiences, as well as my social media accounts on the Internet. You can contact with me using these accounts."
    }
 }

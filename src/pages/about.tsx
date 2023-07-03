@@ -1,14 +1,14 @@
-import { Flex, Heading, List } from '@chakra-ui/layout';
-import { Box, useColorModeValue } from '@chakra-ui/react';
-import { GetStaticPropsContext } from 'next';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import ExperienceInfo from '../components/experienceInfo';
+import React from 'react';
 import PageLayout from '../components/layouts/pageLayout';
-import OnTheWebLinkItem from '../components/onTheWebLinkItem';
+import { Box, Heading, List, useColorModeValue } from '@chakra-ui/react';
 import ThemedText from '../components/themedText';
+import { useTranslation } from 'next-i18next';
+import { GetStaticPropsContext } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import experienceData from '../lib/experienceData';
+import ExperienceInfo from '../components/experienceInfo';
 import onTheWebLinks from '../lib/onTheWebLinks';
+import OnTheWebLinkItem from '../components/onTheWebLinkItem';
 
 export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
    if (locale) {
@@ -19,38 +19,16 @@ export const getStaticProps = async ({ locale }: GetStaticPropsContext) => {
    return { props: {} };
 };
 
-const Home = () => {
+const AboutPage = () => {
    const { t } = useTranslation();
-
    return (
-      <PageLayout>
-         <Flex
-            align='center'
-            mt={{
-               base: 12,
-               md: 0,
-            }}
-            justify='space-between'
-            direction={{ md: 'row', base: 'column-reverse' }}
-         >
-            <Box>
-               <Heading
-                  variant='page-title'
-                  fontWeight='bold'
-                  fontSize='5xl'
-                  textAlign={{ base: 'center', md: 'initial' }}
-               >
-                  Mert Genç
-               </Heading>
-               <ThemedText fontStyle='italic' textAlign={{ base: 'center', md: 'initial' }} color='grey' fontSize='3xl'>
-                  {t('home.software_engineer_text')}
-               </ThemedText>
-            </Box>
-         </Flex>
-
+      <PageLayout title={t('nav.about_text')}>
+         <Heading py={6} textAlign='center'>
+            {t('nav.about_text')}
+         </Heading>
          <Box mt={4}>
             <ThemedText mt={6} fontSize='xl'>
-               {t('home.about_text')}
+               {t('about.get_started_text')}
             </ThemedText>
          </Box>
 
@@ -76,7 +54,7 @@ const Home = () => {
                </Heading>
                <List mt={6}>
                   {onTheWebLinks.map((item) => (
-                     <OnTheWebLinkItem key={item.href} {...item} />
+                     <OnTheWebLinkItem key={item.href} item={item} />
                   ))}
                </List>
             </Box>
@@ -85,4 +63,4 @@ const Home = () => {
    );
 };
 
-export default Home;
+export default AboutPage;

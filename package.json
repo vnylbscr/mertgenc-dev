@@ -16,7 +16,7 @@
       "@emotion/styled": "^11",
       "@sanity/block-content-to-react": "^3.0.0",
       "@tanem/react-nprogress": "^3.0.82",
-      "framer-motion": "^4.1.17",
+      "framer-motion": "5.3.0",
       "moment": "^2.29.1",
       "next": "12.1.0",
       "next-i18next": "^11.0.0",

@@ -17,5 +17,5 @@
    },
    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
    "exclude": ["node_modules"],
-   "files": ["@types/block-content-to-react.d.ts"]
+   "files": ["src/@types/block-content-to-react.d.ts"]
 }

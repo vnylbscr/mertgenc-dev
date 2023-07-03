@@ -8,7 +8,6 @@ import {
    MenuItem,
    MenuList,
    Stack,
-   useColorModeValue,
    useDisclosure,
 } from '@chakra-ui/react';
 import { TFunction, useTranslation } from 'next-i18next';
@@ -66,13 +65,12 @@ const AppBar: React.FC = () => {
          width='100%'
          zIndex={100}
          style={{ backdropFilter: 'blur(10px)', WebkitBackfaceVisibility: 'hidden' }}
-         bg={{ base: useColorModeValue('#EDF2F7', '#1A202C'), md: 'none' }}
          padding={6}
       >
          <Flex
             mb={{
                base: 4,
-               sm: '0',
+               sm: 0,
             }}
          >
             <HeaderTitle />
@@ -85,6 +83,7 @@ const AppBar: React.FC = () => {
             >
                <AnimatedNavText href='/works' title={t('nav.works_text')} />
                <AnimatedNavText href='/blog' title={t('nav.blog_text')} />
+               <AnimatedNavText href='/about' title={t('nav.about_text')} />
             </Stack>
          </Flex>
 
