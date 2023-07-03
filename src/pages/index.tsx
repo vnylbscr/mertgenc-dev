@@ -31,7 +31,15 @@ const Home = () => {
             justify='space-between'
             direction={{ md: 'row', base: 'column-reverse' }}
          >
-            <Stack spacing={'4'} alignItems={'center'} justify={'center'} direction={'row'}>
+            <Stack
+               spacing={'4'}
+               alignItems={'center'}
+               justify={'center'}
+               direction={{
+                  md: 'row',
+                  base: 'column',
+               }}
+            >
                <Avatar
                   name={'Mert Genç'}
                   mt={{ base: '4', md: undefined }}
