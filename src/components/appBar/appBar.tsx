@@ -8,7 +8,9 @@ import {
    MenuItem,
    MenuList,
    Stack,
+   useColorModeValue,
    useDisclosure,
+   useMediaQuery,
 } from '@chakra-ui/react';
 import { TFunction, useTranslation } from 'next-i18next';
 import { useRouter } from 'next/dist/client/router';
@@ -52,6 +54,7 @@ const AppBar: React.FC = () => {
 
    const { locale, locales, asPath } = useRouter();
    const { t } = useTranslation();
+   const [isMobile] = useMediaQuery('(max-width: 768px)');
 
    const ROUTES = SELECT_ITEMS(t);
 
@@ -63,9 +66,11 @@ const AppBar: React.FC = () => {
          wrap='wrap'
          position='fixed'
          width='100%'
-         zIndex={100}
-         style={{ backdropFilter: 'blur(10px)', WebkitBackfaceVisibility: 'hidden' }}
+         zIndex={999}
+         style={isMobile ? undefined : { backdropFilter: 'blur(10px)', WebkitBackfaceVisibility: 'hidden' }}
          padding={6}
+         //eslint-disable-next-line
+         bg={isMobile ? useColorModeValue('white', 'gray.800') : undefined}
       >
          <Flex
             mb={{
@@ -81,6 +86,7 @@ const AppBar: React.FC = () => {
                alignItems='center'
                flexGrow={1}
             >
+               <Box w={12} h={12}></Box>
                <AnimatedNavText href='/works' title={t('nav.works_text')} />
                <AnimatedNavText href='/blog' title={t('nav.blog_text')} />
                <AnimatedNavText href='/about' title={t('nav.about_text')} />
