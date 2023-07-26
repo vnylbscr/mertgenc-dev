@@ -49,5 +49,9 @@
       "blog_text": "Blog",
       "about_text": "Hakkımda",
       "change_theme_tooltip": "Tema Değiştir"
+   },
+   "about": {
+      "get_started_text": "Merhaba! Buradan daha önceki deneyimlerimi anlatan özgeçmişime ve internetteki sosyal medya hesaplarıma ulaşabilirsiniz. Benimle bu hesaplardan iletişime geçebilirsiniz.",
+      "about_me": "Hakkımda"
    }
 }

@@ -16,7 +16,7 @@ const PageLayout: React.FC<{ title?: string }> = ({ children, title }) => (
    >
       {title && (
          <Head>
-            <title> Mert Genç - {title} </title>
+            <title> Mert Genç - Software Engineer </title>
             <meta name='twitter:title' content={title} />
             <meta property='og:title' content={title} />
          </Head>

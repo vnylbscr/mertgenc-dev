@@ -24,7 +24,7 @@ const AboutPage = () => {
    return (
       <PageLayout title={t('nav.about_text')}>
          <Heading py={6} textAlign='center'>
-            {t('nav.about_text')}
+            {t('about.about_me')}
          </Heading>
          <Box mt={4}>
             <ThemedText mt={6} fontSize='xl'>

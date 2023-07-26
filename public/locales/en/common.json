@@ -51,6 +51,7 @@
       "change_theme_tooltip": "Change theme"
    },
    "about": {
-      "get_started_text": "Hello! From here you can access my resume about my previous experiences, as well as my social media accounts on the Internet. You can contact with me using these accounts."
+      "get_started_text": "Hello! From here you can access my resume about my previous experiences, as well as my social media accounts on the Internet. You can contact with me using these accounts.",
+      "about_me": "About Me"
    }
 }

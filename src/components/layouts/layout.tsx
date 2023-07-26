@@ -10,7 +10,7 @@ const MainLayout: React.FC = ({ children }) => {
       <Box as='main' pb={1}>
          <Head>
             <meta name='viewport' content='width=device-width, initial-scale=1' />
-            <meta name='description' content="Mert Genç's Homepage" />
+            <meta name='description' content='Mert Genç - Software Engineer' />
             <meta name='author' content='Mert Genç' />
             <meta name='author' content='Mert Genç' />
             <meta name='author' content='Mert Genç Sakarya Istanbul Turkey' />
@@ -29,7 +29,7 @@ const MainLayout: React.FC = ({ children }) => {
             <meta property='og:site_name' content='Mert Genç Anasayfa' />
             <meta property='og:type' content='website' />
             <meta property='og:image' content='/card.png' />
-            <title>Mert Genç - homepage</title>
+            <title>Mert Genç - Software Engineer</title>
          </Head>
          <AppBar />
 
