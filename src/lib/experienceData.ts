@@ -36,12 +36,12 @@ const experienceData: ExperiencedInfoProps[] = [
       ],
    },
    {
-      title: 'Full Stack Developer',
+      title: 'Software Engineer (Full Stack Developer)',
       description:
          'On the client side, we are developing a mobile application using React Native. On the server side, we are developing microservices using Spring Boot and Java EE. I am responsible for developing the backend and the client application.',
       company: 'Kocfinansman A.S',
       companyUrl: 'http://kocfinans.com.tr',
-      workedDate: 'Feb 2022 - Present',
+      workedDate: 'Feb 2022 - July 2023',
       technologies: [
          'Spring Boot',
          'Java EE',
@@ -65,6 +65,12 @@ const experienceData: ExperiencedInfoProps[] = [
          'SQL',
          'Jenkins',
       ],
+   },
+   {
+      title: 'Software Engineer (Full Stack Developer)',
+      company: 'Sisal',
+      companyUrl: 'https://www.flutter.com/our-brands/sisal/',
+      workedDate: 'July 2023 - Present',
    },
 ];
 

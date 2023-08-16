@@ -8,7 +8,7 @@ export type ExperiencedInfoProps = {
    workedDate: string;
    description?: string;
    company: string;
-   companyUrl: string;
+   companyUrl?: string;
    technologies?: string[];
 };
 
@@ -31,11 +31,13 @@ const ExperienceInfo: React.FC<ExperiencedInfoProps> = ({
             </ThemedText>
          </Heading>
 
-         <ThemedText fontSize='xl'>
-            <Link href={companyUrl} target='_blank'>
-               {company}
-            </Link>
-         </ThemedText>
+         {companyUrl && (
+            <ThemedText fontSize='xl'>
+               <Link href={companyUrl} target='_blank'>
+                  {company}
+               </Link>
+            </ThemedText>
+         )}
 
          <ThemedText>{description}</ThemedText>
          {technologies && (
